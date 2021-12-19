@@ -16,6 +16,7 @@
     
     --clr-light: #fff;
     --clr-dark: #303030;
+    --clr-footer: #111;
     --clr-accent-400: #8B008B;
     --clr-accent-500: #580d3a;
     
@@ -98,7 +99,13 @@ h1 { font-size: var(--fs-h1) }
 h2 { font-size: var(--fs-h2) }
 h3 { font-size: var(--fs-h3) }
 
-
+strong{
+    font-weight: var(--fw-bold);
+}
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
 .section-title {
     margin-bottom: .25em;
     color: var(--clr-accent-400);
@@ -107,7 +114,7 @@ h3 { font-size: var(--fs-h3) }
 
 
 /* Layout */
-.container {
+section {
     padding: 5em 2em;
     margin: 0 auto;  
 }
@@ -152,58 +159,66 @@ li, a, button {
 
 
 /* About */
-.about{
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
-}
-.about-container{
-    display: grid;
-}
 
-.about-title,
-.about-info{
-    text-align: center;
-    
-}
-.about-info{
-    color: var(--clr-accent-400);
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-   
+.about{
+    position: relative;
 }
 .about-title{
-    
+    font-weight: var(--fw-reg);
+    margin-bottom: .25em;
 }
+
 .about-body{
-    line-height: 1.7;
-    padding: .5em;
+    background-color: var(--clr-accent-400);
+    color: var(--clr-light);
+    margin: 0;
+    font-size:var(--fs-h3);
+    padding: .25em 1em;
+    margin-bottom: 1em;
+    display: inline-block;
 }
 .about-img{
-    max-width: 100%;
+    box-shadow: var(--bs);
+    min-height: 50vh;
     object-fit: cover;
 }
-
-.about-content {
-    background-color: var(--clr-light);
-    color: var(--clr-dark);
-    padding: .5em;
-    
-}
-
-
 @media (min-width: 800px) {
-    .about-container{
-        grid-template: auto auto / auto auto;
-        width: 80%;
+    .about{
+        margin: 0 auto;
+        width: min-content;
+        display: grid;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns:  min-content max-content;
     }
-    
+    .about-img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        
+    }
+    .about-title strong {
+        display: block;
+    }
+    .about-body{
+        align-self: start;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        text-align: center;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+
+    }
 }
 
 /*  Skills  */
 
 .my-skills {
-    background-color: var(--clr-light);
-    color: var(--clr-dark);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
     text-align: center;
 }
 
@@ -253,14 +268,16 @@ li, a, button {
 /* Project */
 
 .project {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
     
 }
 .portfolios{ 
     display: flex;
     flex-direction: column;
-
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
     
 }
 .portfolio{
@@ -296,14 +313,15 @@ li, a, button {
 
 @media (min-width: 800px) {
     .portfolios{
-        flex-flow: row-reverse nowrap ;
-        /* max-width: 90%; */
+        /* flex-flow: row-reverse nowrap ; */
+
         margin: 0 auto;
     }
-    .portfolio-img{
-       
-    }
+    
 }
+
+
+
 
 
 
@@ -311,8 +329,8 @@ li, a, button {
 /* footer */
 
 .footer {
-    background: var(--clr-light);
-    color: var(--clr-accent-400);
+    background: var(--clr-dark);
+    color: var(--clr-light);
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-h3);
@@ -320,7 +338,7 @@ li, a, button {
 }
 
 .footer a { 
-    color: inherit;
+    color: var(--clr-light);
     text-decoration: none;
 }
 
@@ -352,3 +370,29 @@ li, a, button {
 .social-list-link {
     padding: .5em;
 }
+
+
+/* Individual portfolio item styles */
+/* .intro-title{
+    margin-bottom: .5em;
+}
+.intro-body{
+    background-color: var(--clr-accent-400);
+    color: var(--clr-light);
+    margin: 0;
+    font-size: var(--fs-h3);
+    padding: .25em 1em;
+    margin-bottom: 1em;
+    display: inline-block;
+} */
+/* .portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+} */
