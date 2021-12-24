@@ -162,6 +162,8 @@ li, a, button {
 
 .about{
     position: relative;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
 }
 .about-title{
     font-weight: var(--fw-reg);
@@ -217,8 +219,8 @@ li, a, button {
 /*  Skills  */
 
 .my-skills {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
     text-align: center;
 }
 
@@ -268,8 +270,8 @@ li, a, button {
 /* Project */
 
 .projects {
-    background-color: var(--clr-light);
-    color: var(--clr-dark);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
     text-align: center;    
 }
 
@@ -289,13 +291,10 @@ li, a, button {
         opacity 250ms linear;
     object-fit: cover;
     width: 100%;
-    
-}
-.img-one{
     height: 50vh;
     
+    
 }
-
 
 .portfolio-item:focus {
     position: relative;
@@ -309,8 +308,7 @@ li, a, button {
 }
 
 @media (min-width: 800px) {
-    .img-one{
-   	    min-height: 113vh;    
+    .portfolio-img{
         object-fit: cover;	
     }
 
@@ -321,8 +319,8 @@ li, a, button {
 /* footer */
 
 .footer {
-    background: var(--clr-dark);
-    color: var(--clr-light);
+    background: var(--clr-light);
+    color: var(--clr-dark);
     text-align: center;
     padding: 2.5em 0;
     font-size: var(--fs-h3);
@@ -330,7 +328,7 @@ li, a, button {
 }
 
 .footer a { 
-    color: var(--clr-light);
+    color: var(--clr-accent-400);
     text-decoration: none;
 }
 
@@ -340,7 +338,8 @@ li, a, button {
 
 .footer-link:hover,
 .social-list-link:hover {
-    opacity: .7;
+    /* opacity: .7; */
+    color: var(--clr-accent-500);
 }
 
 .footer-link:hover {
