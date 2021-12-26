@@ -393,9 +393,10 @@ li, a, button {
     margin: 1em;
 }
 @media (min-width: 800px) {
-    .project-two-img{
-        width: 40%;
-        margin: 0 auto;
+    .project-two-img,
+    .project-four-img{
+        width: 60%;
+        margin: 1em auto;
     }
     .project-body{
         max-width: 60%;
