@@ -152,7 +152,8 @@ li, a, button {
 .nav-links li a{
   transition: all 0.3s ease 0s;
 }
-.nav-links li a:hover{
+.nav-links li a:hover,
+.logo:hover{
   color: var(--clr-accent-400);
 }
 
@@ -161,60 +162,70 @@ li, a, button {
 /* About */
 
 .about{
-    position: relative;
     background-color: var(--clr-dark);
     color: var(--clr-light);
-}
-.about-title{
-    font-weight: var(--fw-reg);
-    margin-bottom: .25em;
-}
-
-.about-body{
-    background-color: var(--clr-accent-400);
-    color: var(--clr-light);
-    margin: 0;
-    font-size:var(--fs-h3);
-    padding: .25em 1em;
-    margin-bottom: 1em;
-    display: inline-block;
 }
 .about-img{
     box-shadow: var(--bs);
     min-height: 50vh;
     object-fit: cover;
 }
+.about-title{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.about-title span{
+    color: var(--clr-accent-400);
+}
+
+.about-body{
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: solid 3px #8B008B;
+    font-size: 1.75rem;
+    color: #fff;
+    animation: animated-text 4s steps(29, end) 1s 1 normal both,
+        animated-cursor 600ms steps(29, end) infinite;
+}
+/* text animation */
+
+@keyframes animated-text {
+    from {
+      width: 0;
+    }
+    to {
+      width: 300px;
+    }
+  }
+  
+  @keyframes animated-cursor {
+    from {
+      border-right-color: #8B008B;
+    }
+    to {
+      border-right-color: transparent;
+    }
+  }
 @media (min-width: 800px) {
     .about{
-        margin: 0 auto;
         width: min-content;
         display: grid;
-        grid-column-gap: 1em;
+        justify-content: center; 
+        align-items: center; 
+        grid-column-gap: 2em;
         grid-template-areas: 
             "img title"
             "img subtitle";
-        grid-template-columns:  min-content max-content;
     }
     .about-img{
         grid-area: img;
-        min-width: 250px;
-        position: relative;
-        
+        min-width: 250px;    
     }
-    .about-title strong {
-        display: block;
-    }
-    .about-body{
-        align-self: start;
-        grid-column: 1 / -1;
-        grid-row: 2;
-        text-align: center;
-        position: relative;
-        left: -1.5em;
-        width: calc(100% + 1.5em);
-
-    }
+    
+      
 }
+
 
 /*  Skills  */
 
