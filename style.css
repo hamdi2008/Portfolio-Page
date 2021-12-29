@@ -372,7 +372,12 @@ li, a, button {
 .social-list-link {
     padding: .5em;
 }
-
+.copyright{
+    font-size: var(--fs-body);
+    font-weight: var(--fw-reg);
+    opacity: .5;
+    margin-top: 2em;
+}
 
 /* Project */
 .footer-project {
@@ -404,9 +409,8 @@ li, a, button {
     margin: 1em;
 }
 @media (min-width: 800px) {
-    .project-two-img,
-    .project-four-img{
-        width: 60%;
+    .large-img{
+        width: 40%;
         margin: 1em auto;
     }
     .project-body{
