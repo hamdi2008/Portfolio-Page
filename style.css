@@ -356,6 +356,10 @@ header{
     margin: 0 auto;
     padding: 2em;
 }
+.skill i{
+    font-size: 3rem;
+    margin-top: 1em;
+}
 
 
 @media (min-width: 800px) {
